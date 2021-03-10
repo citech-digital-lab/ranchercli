@@ -1,4 +1,5 @@
 Docker image for CI/CD
+rancher-cli usage : see https://rancher.com/docs/rancher/v2.x/en/cli/
 
 ### Installed tools
 
