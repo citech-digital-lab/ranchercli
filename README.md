@@ -11,4 +11,4 @@ rancher-cli usage : see https://rancher.com/docs/rancher/v2.x/en/cli/
 - [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator) (latest version when run the build)
 - [eksctl](https://github.com/weaveworks/eksctl) (latest version when run the build)
 - [awscli](https://github.com/aws/aws-cli) (latest version when run the build)
-- [rancher-cli](https://github.com/rancher/cli) (v.2.4.10)
+- [rancher-cli](https://github.com/rancher/cli) (v.2.7.0)
