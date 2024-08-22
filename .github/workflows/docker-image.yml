@@ -13,11 +13,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Set up Docker tag
+      id: docker_tag
+      run: echo "TAG=$(date +%s)" >> $GITHUB_ENV
+
     - name: Log in to GitHub Container Registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner }}/my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner }}/my-image-name:${{ env.TAG }}
 
     - name: Push the Docker image to GitHub Container Registry
-      run: docker push ghcr.io/${{ github.repository_owner }}/my-image-name:$(date +%s)
+      run: docker push ghcr.io/${{ github.repository_owner }}/my-image-name:${{ env.TAG }}
